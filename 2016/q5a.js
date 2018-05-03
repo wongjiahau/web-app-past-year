@@ -1,0 +1,1 @@
+localStorage["images"] = images;
