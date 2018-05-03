@@ -1,0 +1,30 @@
+<html>
+
+<body>
+    <div id="wrapper">
+        <!-- This part is just for demo -->
+        <ul>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+            <li>Coffee</li>
+        </ul>
+    </div>
+    <script>
+        // Answer here
+        var wrapper = document.getElementById("wrapper");
+        var children = wrapper.children;
+        for (let i = 0; i < children.length; i++) {
+            wrapper.removeChild(children[i]);
+        }
+    </script>
+</body>
+
+</html>
