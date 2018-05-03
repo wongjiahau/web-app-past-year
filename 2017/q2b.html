@@ -1,0 +1,23 @@
+<html>
+
+    <body>
+        <div id="myDiv"></div>
+    </body>
+    <script>
+        var committee = [
+            {"name": "Ng Pei Li", "position": "Chairman"},
+            {"name": "Ang Chee Wan", "position": "Vice Chairman"},
+            {"name": "Mok Sook Chen", "position": "Secretary"},
+        ]
+        var dataList = document.createElement("dl");
+        for(var i = 0; i < committee.length; i++) {
+            var dataTerm = document.createElement("dt");
+            var dataDefinition = document.createElement("dd");
+            dataTerm.innerHTML = "<b>" + committee[i].position + "</b>";
+            dataDefinition.innerHTML = committee[i].name;
+            dataList.appendChild(dataTerm);
+            dataList.appendChild(dataDefinition);
+        }
+        document.getElementById("myDiv").appendChild(dataList);
+    </script>
+</html>
