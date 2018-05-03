@@ -1,0 +1,38 @@
+<html>
+    <div id="myCal">
+
+    </div>
+    <script>
+        var table = document.createElement("table");
+        var DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+        var headerRow = document.createElement("tr");
+        for(var i = 0; i < DAYS.length; i++) {
+            var th = document.createElement("th");
+            th.innerHTML = DAYS[i];
+            headerRow.appendChild(th);
+        }
+        table.appendChild(headerRow);
+        var tr = document.createElement("tr");
+        for(var day = 0; day < 31; day++) {
+            var td = document.createElement("td");
+            td.innerHTML = day + 1;
+            tr.appendChild(td);
+            if(day % 7 === 6 || day === 30) {
+                table.appendChild(tr);
+                tr = document.createElement("tr");
+            }
+        }
+        var HOLIDAYS = [28, 29];
+        for(var i = 0; i < HOLIDAYS.length; i++) {
+            var tds = table.getElementsByTagName("td");
+            for(var k = 0; k < tds.length; k++) {
+                console.log(tds[k].innerHTML);
+                if(tds[k].innerHTML === HOLIDAYS[i].toString()) {
+                    tds[k].style = "background: yellow;";
+                }
+            }
+        }
+        var myCal = document.getElementById("myCal");
+        myCal.appendChild(table);
+    </script>
+</html>
