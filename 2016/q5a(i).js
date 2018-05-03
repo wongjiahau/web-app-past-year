@@ -1,0 +1,1 @@
+localStorage["images"] = JSON.stringify(images);
