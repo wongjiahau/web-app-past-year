@@ -13,14 +13,14 @@ foreach($items as $i) {
     $product_id = $i["id"];
     $quantity   = $i["quantity"];
     $unit_price = $i["unit_price"];
+    $conn->query("
+        INSERT INTO item(product_id, quantity, unit_price, transaction_id) VALUES (
+            $product_id,
+            $quantity,
+            $unit_price,
+            $transaction_id
+        );
+    ");
 }
-$conn->query("
-    INSERT INTO item(product_id, quantity, unit_price, transaction_id) VALUES (
-        $product_id,
-        $quantity,
-        $unit_price,
-        $transaction_id
-    );
-");
 
 ?>
